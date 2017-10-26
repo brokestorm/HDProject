@@ -15,14 +15,17 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-public slots:
-    void mudaTexto();
+private slots:
+    void on_btnHuygens_clicked();
 
+    void on_btnHypo_clicked();
+
+    void on_btnCycloid_clicked();
+
+    void on_btnAstroid_clicked();
 
 private:
     Ui::MainWindow *ui;
-    int valid;
-    std::vector<QString> m_strings;
 };
 
 #endif // MAINWINDOW_H

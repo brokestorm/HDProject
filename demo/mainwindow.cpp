@@ -9,15 +9,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    m_strings.push_back(QString("OI"));
-    m_strings.push_back(QString("NAO"));
-    m_strings.push_back(QString("SIM"));
-    m_strings.push_back(QString("OK"));
-    m_strings.push_back(QString("CANCELAR"));
 
-    ui->botao->setText("BOTAO");
+    //m_strings.push_back(QString("NAO"));
+    //m_strings.push_back(QString("SIM"));
+    //m_strings.push_back(QString("OK"));
+    //m_strings.push_back(QString("CANCELAR"));
+
+    ui->botao->setText("BOTAO1");
+    ui->outro_botao->setText("BOTAO2");
+    connect(ui->botao, SIGNAL(clicked()), ui->outro_botao, SLOT(click()));
     connect(ui->botao, SIGNAL(clicked()), ui->outro_botao, SLOT(animateClick()));
-    connect(ui->botao, SIGNAL(clicked()), this, SLOT(mudaTexto()));
+    connect(ui->outro_botao, SIGNAL(clicked()), this, SLOT(mudaTexto()));
 }
 
 MainWindow::~MainWindow()
